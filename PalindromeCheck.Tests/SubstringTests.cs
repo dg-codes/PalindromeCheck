@@ -15,8 +15,8 @@ namespace PalindromeCheck.Tests
         public void CompareTo_GivenLongerString_ReturnsPositiveValue()
         {
             // arrange
-            var substring = new Substring() { Text = "substring" };
-            var other = new Substring() { Text = "comparison test" };
+            var substring = new Palindrome() { Text = "substring" };
+            var other = new Palindrome() { Text = "comparison test" };
 
             // act
             int actual = substring.CompareTo(other);
@@ -29,8 +29,8 @@ namespace PalindromeCheck.Tests
         public void CompareTo_GivenLongerString_ReturnsNegativeValue()
         {
             // arrange
-            var substring = new Substring() { Text = "substring" };
-            var other = new Substring() { Text = "other" };
+            var substring = new Palindrome() { Text = "substring" };
+            var other = new Palindrome() { Text = "other" };
 
             // act
             int actual = substring.CompareTo(other);
@@ -43,8 +43,8 @@ namespace PalindromeCheck.Tests
         public void CompareTo_GivenSameLengthString_ReturnsZero()
         {
             // arrange
-            var substring = new Substring() { Text = "equal." };
-            var other = new Substring() { Text = "length" };
+            var substring = new Palindrome() { Text = "equal." };
+            var other = new Palindrome() { Text = "length" };
 
             // act
             int actual = substring.CompareTo(other);
@@ -61,10 +61,10 @@ namespace PalindromeCheck.Tests
         public void ToString_GivenValidInput_ConcatenatesTheCorrectString(string text, int index, int length)
         {
             // arrange
-            var substring = new Substring
+            var substring = new Palindrome
             {
                 Text = text,
-                Index = index
+                StartingIndex = index
             };
             string expected = $"Text: {text}, Index: {index}, Length: {length}";
 
@@ -79,7 +79,7 @@ namespace PalindromeCheck.Tests
         public void ToString_GivenNullText_ThrowsNullReferenceException()
         {
             // arrange
-            var substring = new Substring();
+            var substring = new Palindrome();
 
             // act
 

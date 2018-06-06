@@ -19,7 +19,7 @@ namespace PalindromeCheck.Processors
 
             for (int i = 0; i < pivotingLenght; i++)
             {
-                var palindrome = (Substring)GeneratePalindrome(input, i);
+                var palindrome = (Palindrome)GeneratePalindrome(input, i);
 
                 if (palindrome == null || string.IsNullOrWhiteSpace(palindrome.Text)) continue;
 
@@ -46,10 +46,10 @@ namespace PalindromeCheck.Processors
                 right++;
             }
 
-            var result = new Substring
+            var result = new Palindrome
             {
                 Text = input.Substring(left, right - left),
-                Index = left,
+                StartingIndex = left,
             };
 
             return result;

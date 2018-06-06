@@ -17,7 +17,7 @@ namespace PalindromeCheck
             string input = Console.ReadLine();
 
             IPalindromeProcessor processor = new PalindromeProcessor();
-            List<Substring> palindromes = processor.GetPalindromes(input).OfType<Substring>().ToList();
+            List<Palindrome> palindromes = processor.GetPalindromes(input).OfType<Palindrome>().ToList();
 
             palindromes.Sort();
             foreach (var item in palindromes.Take(3))

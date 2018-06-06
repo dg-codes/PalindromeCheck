@@ -28,10 +28,10 @@ namespace PalindromeCheck.Tests
         public void GeneratePalindrome_GivenStringContainingPalindrome_ReturnsCorrectText(string input, int pivot, string expected)
         {
             // arrage
-            Substring actual;
+            Palindrome actual;
 
             // act
-            actual = (Substring)processor.GeneratePalindrome(input, pivot);
+            actual = (Palindrome)processor.GeneratePalindrome(input, pivot);
 
             // assert
             Assert.Equal(expected, actual.Text);
@@ -46,13 +46,13 @@ namespace PalindromeCheck.Tests
         public void GeneratePalindrome_GivenStringContainingPalindrome_ReturnsCorrectIndex(string input, int pivot, int expected)
         {
             // arrage
-            Substring actual;
+            Palindrome actual;
 
             // act
-            actual = (Substring)processor.GeneratePalindrome(input, pivot);
+            actual = (Palindrome)processor.GeneratePalindrome(input, pivot);
 
             // assert
-            Assert.Equal(expected, actual.Index);
+            Assert.Equal(expected, actual.StartingIndex);
         }
 
         [Theory]
@@ -64,10 +64,10 @@ namespace PalindromeCheck.Tests
         public void GeneratePalindrome_GivenStringContainingPalindrome_ReturnsCorrectLength(string input, int pivot, int expected)
         {
             // arrage
-            Substring actual;
+            Palindrome actual;
 
             // act
-            actual = (Substring)processor.GeneratePalindrome(input, pivot);
+            actual = (Palindrome)processor.GeneratePalindrome(input, pivot);
 
             // assert
             Assert.Equal(expected, actual.Length);
@@ -80,10 +80,10 @@ namespace PalindromeCheck.Tests
         public void GeneratePalindrome_GivenNullOrEmptyInput_ReturnsNull(string input, int pivot)
         {
             // arrage
-            Substring actual;
+            Palindrome actual;
 
             // act
-            actual = (Substring)processor.GeneratePalindrome(input, pivot);
+            actual = (Palindrome)processor.GeneratePalindrome(input, pivot);
 
             // assert
             Assert.Null(actual);

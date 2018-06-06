@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace PalindromeCheck.Models
 {
-    public class Substring : ISubstring, IComparable<Substring> 
+    public class Palindrome : ISubstring, IComparable<Palindrome> 
     {
         public string Text { get; set; }
-        public int Index { get; set; }
+        public int StartingIndex { get; set; }
         public int Length => Text.Length;
 
-        public int CompareTo(Substring other)
+        public int CompareTo(Palindrome other)
         {
             return other.Length - this.Length;
         }
 
         public override string ToString()
         {
-            return $"Text: {this.Text}, Index: {this.Index}, Length: {this.Length}";
+            return $"Text: {this.Text}, Index: {this.StartingIndex}, Length: {this.Length}";
         }
     }
 }
