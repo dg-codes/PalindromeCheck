@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IPalindromeProcessor.cs" />
+    <Compile Include="Processors\PalindromeProcessor.cs" />
+    <Compile Include="Interfaces\ISubstring.cs" />
+    <Compile Include="Models\Substring.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
