@@ -20,10 +20,11 @@ namespace PalindromeCheck.Tests
         }
 
         [Theory]
-        [InlineData("civic", 0, "civic")]
-        [InlineData("minimum", 0, "minim")]
-        [InlineData("minimum", 1, "ini")]
-        [InlineData("bamboo", 0, "oo")]
+        [InlineData("civic", 5, "civic")]
+        [InlineData("minimum", 5, "minim")]
+        [InlineData("bamboo", 10, "oo")]
+        [InlineData("mimic", 3, "mim")]
+        [InlineData("mimic", 5, "imi")]
         public void GeneratePalindrome_GivenStringContainingPalindrome_ReturnsCorrectText(string input, int pivot, string expected)
         {
             // arrage
@@ -37,10 +38,11 @@ namespace PalindromeCheck.Tests
         }
 
         [Theory]
-        [InlineData("civic", 0, 0)]
-        [InlineData("minimum", 0, 0)]
-        [InlineData("minimum", 1, 1)]
-        [InlineData("bamboo", 0, 4)]
+        [InlineData("civic", 5, 0)]
+        [InlineData("minimum", 5, 0)]
+        [InlineData("bamboo", 10, 4)]
+        [InlineData("mimic", 3, 0)]
+        [InlineData("mimic", 5, 1)]
         public void GeneratePalindrome_GivenStringContainingPalindrome_ReturnsCorrectIndex(string input, int pivot, int expected)
         {
             // arrage
@@ -54,10 +56,11 @@ namespace PalindromeCheck.Tests
         }
 
         [Theory]
-        [InlineData("civic", 0, 5)]
-        [InlineData("minimum", 0, 5)]
-        [InlineData("minimum", 1, 3)]
-        [InlineData("bamboo", 0, 2)]
+        [InlineData("civic", 5, 5)]
+        [InlineData("minimum", 5, 5)]
+        [InlineData("bamboo", 10, 2)]
+        [InlineData("mimic", 3, 3)]
+        [InlineData("mimic", 5, 3)]
         public void GeneratePalindrome_GivenStringContainingPalindrome_ReturnsCorrectLength(string input, int pivot, int expected)
         {
             // arrage

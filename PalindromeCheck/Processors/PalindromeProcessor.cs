@@ -17,7 +17,22 @@ namespace PalindromeCheck.Processors
 
         public ISubstring GeneratePalindrome(string input, int pivot)
         {
-            throw new NotImplementedException();
+            int left = pivot / 2;
+            int right = left + pivot % 2;
+
+            while (left > 0 && right < input.Length && input[left - 1] == input[right])
+            {
+                left--;
+                right++;
+            }
+
+            var result = new Substring
+            {
+                Text = input.Substring(left, right - left),
+                Index = left,
+            };
+
+            return result;
         }
     }
 }
