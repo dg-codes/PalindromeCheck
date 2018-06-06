@@ -23,7 +23,7 @@ namespace PalindromeCheck.Processors
 
                 if (palindrome == null || string.IsNullOrWhiteSpace(palindrome.Text)) continue;
 
-                if (palindrome.Length > 1)
+                if (palindrome.Length > 1) // not considering letter as being palindromes
                 {
                     palindromes.Add(palindrome);
                 }
