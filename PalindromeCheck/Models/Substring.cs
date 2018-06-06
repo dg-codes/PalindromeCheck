@@ -15,12 +15,12 @@ namespace PalindromeCheck.Models
 
         public int CompareTo(Substring other)
         {
-            throw new NotImplementedException();
+            return other.Length - this.Length;
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"Text: {this.Text}, Index: {this.Index}, Length: {this.Length}";
         }
     }
 }
