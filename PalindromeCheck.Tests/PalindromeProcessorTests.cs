@@ -85,5 +85,34 @@ namespace PalindromeCheck.Tests
             // assert
             Assert.Null(actual);
         }
+
+        [Theory]
+        [InlineData("civic", 1)]
+        [InlineData("minimum", 2)]
+        [InlineData("visualstudio", 0)]
+        public void GetPalindromes_GivenStringsContainingPalindroms_ContainsTheExpectedNumberOfElements(string input, int expectedCount)
+        {
+            // arrange
+            IList<ISubstring> result;
+
+            // act
+            result = processor.GetPalindromes(input);
+
+            // assert
+            Assert.Equal(expectedCount, result.Count);
+        }
+
+        [Fact]
+        public void GetPalindromes_GiveNullInput_ReturnsNull()
+        {
+            // arrange
+            IList<ISubstring> result;
+
+            // act
+            result = processor.GetPalindromes(null);
+
+            // assert
+            Assert.Null(result);
+        }
     }
 }
